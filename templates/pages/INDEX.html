@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon/butterfly_favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    <title>Butterfly</title>
+    <script>
+        function displayImage(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('uploadedImage').src = e.target.result;
+                    document.getElementById('uploadedImage').style.display = 'block';
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</head>
+<body>
+    <header class="butterfly-header">
+        <div class="header-image">
+            <img src="{{ url_for('static', filename='assets/images/logo.png') }}" alt="logo">
+        </div>
+        <a href="List.html" class="button header-button">
+            Наша коллекция
+        </a>
+    </header>
+    <main class="site-grid">
+        <div class="item1">
+            <div class="main-block">
+                <form action="/predict" method="post" enctype="multipart/form-data" class="main-form-block">
+                    <div class="camera-roll">
+                        <img id="uploadedImage" style="max-width: 300px; display: none;">
+                        <label for="file-input-id" class="button section-button camera-button">
+                            <span class="section-inline-icon button-inline-element"><img src="{{ url_for('static', filename='assets/images/photo-camera-svgrepo-com.svg') }}" alt="camera"></span>Выбрать файл
+                        </label>
+                        <input type="file" id="file-input-id" name="file" onchange="displayImage(this);" style="display: none;">
+                    </div>
+                    <input type="submit" value="Upload and Predict" class="button section-button files-button">
+                </form>
+                <h2 id="predictionResult">{{ prediction }}</h2>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        Спасибо за использование!
+    </footer>
+    <script src="{{ url_for('static', filename='assets/scripts/camera-script.js') }}"></script>
+</body>
+</html>

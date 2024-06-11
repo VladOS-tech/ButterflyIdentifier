@@ -1,0 +1,41 @@
+.list-block{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    margin: 11px 0 32px 0;
+}
+
+.buttefly-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 68px;
+    margin: 10px 0 0 0;
+    align-items: center;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.buttefly-item:active{
+    background-color: rgb(201, 201, 201);
+}
+
+.buttefly-item-image-block{
+    height: calc(100% - 20px);
+    margin: 10px 0 10px 0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.butterfly-item-image{
+    height: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    width: auto;
+}
+
+.butterfly-item-name{
+    font-family: SegoePrint;
+    font-size: 10px;    
+    color: var(--separator-color);
+}

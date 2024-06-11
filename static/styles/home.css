@@ -1,0 +1,196 @@
+.site-grid{
+    margin: 14px 0 0 0;
+    display: grid;
+    grid-auto-rows: min-content;
+    grid-template-columns: 1fr;
+    grid-template-areas:    'file-upload'
+                            'how-it-works'
+                            'about';
+    /* row-gap: 28px; */
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--section-background);
+    border-width: 1px 0 1px 0;
+    border-style: solid;
+    border-color: var(--separator-color);
+    padding: 12px 0 12px 0;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.section-header{
+    font-family: SegoePrint;
+    font-size: 18px;
+    margin: 10px 7px 10px 7px;
+}
+
+.section-list{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    margin: 10px 7px 10px 7px;
+    padding-left: 24px;
+}
+
+.section-list li{
+    margin: 5px 0 5px 0;
+}
+
+.section-text{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0 7px 0 7px;
+    font-size: 14px;
+}
+
+.section-inline-icon{
+    display: inline;
+    margin: 0 2px 0 2px;
+}
+
+.section-inline-icon img{
+    height: 1em;
+    width: auto;
+    align-self: center;
+    vertical-align: middle;
+}
+
+.section-button{
+    height: 29px;
+    background-color: var(--button-color);
+    color: white;
+    margin: 10px 7px 10px 7px;  
+    width: fit-content;
+    align-self: center;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.section-button:hover{
+    background-color: var(--button-color-hover);
+
+}
+
+.section-button:active{
+    background-color: var(--button-color-pressed);
+}
+
+.main-block{
+    display: flex;
+    flex-direction: column;
+    margin: 0 3% 0 3%;
+}
+
+.camera-roll input[type="file"] {
+    display: none;
+}
+
+.camera-roll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    border-color: #00000080;
+    border-width: 1px;
+    overflow: hidden;
+    border-style: solid;
+    position: relative;
+    padding: 20px;
+}
+
+.camera-roll img {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    margin-bottom: 20px; /* Добавьте отступ снизу для изображения */
+}
+
+.camera-roll video{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.camera-button{
+    border-style: none;
+    /*position: absolute;*/
+    bottom: 0;
+    margin-top: 10px;
+}
+
+.main-form-block{
+    display: flex;
+    flex-direction: column;
+}
+
+.files-button{
+    border-style: none;
+    margin-top: 20px;
+}
+
+.button-inline-element{
+    filter: invert();
+    padding: 0 0 3px 0;
+}
+
+.main-block{
+    grid-area: 'file-upload';
+}
+
+.how-it-works-section{
+    grid-area: 'how-it-works';
+}
+
+.about-section{
+    grid-area: 'about';
+}
+
+.popup-tint{
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.info-popup{
+    z-index: 2;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    margin: 100px 0 0 0;
+    width: 100%;
+    background-color: white;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-header{
+    font-family: SegoePrint;
+    font-size: 18px;
+    margin: 10px 7px 10px 7px;
+    color: var(--separator-color);
+    text-align: center;
+    margin: 10px;
+}
+
+.popup-image{
+    border-radius: 25px;
+    margin: 0px 5% 0px 5%;
+}
+
+.popup-text{
+    margin: 10px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+}
+
+.understood-button{
+    padding: 0 30px 0 30px;
+}
